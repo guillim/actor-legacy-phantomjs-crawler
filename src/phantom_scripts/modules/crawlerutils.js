@@ -254,7 +254,7 @@ exports.prepareConfig = function prepareConfig(config) {
         if( fieldError = this._validateField("loadCss", c.loadCss, "boolean") ) {
             throw fieldError;
         }
-				if( fieldError = this._validateField("blockResourceRegex", c.blockResourceRegex, "string") ) {
+        if( fieldError = this._validateField("blockResourceRegex", c.blockResourceRegex, "string") ) {
             throw fieldError;
         }
         if( typeof(c.userAgent)!=='function' && (fieldError = this._validateField("userAgent", c.userAgent, "string")) ) {
