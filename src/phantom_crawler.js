@@ -125,7 +125,7 @@ const inputToConfig = (input) => {
     // TODO: customData is okay???
     const config = _.pick(input,
         'customId', 'startUrls', 'crawlPurls', 'clickableElementsSelector', 'pageFunction', 'interceptRequest',
-        'considerUrlFragment', 'loadImages', 'loadCss', 'injectJQuery', 'injectUnderscoreJs',
+        'considerUrlFragment', 'loadImages', 'loadCss', 'blockResourceRegex', 'injectJQuery', 'injectUnderscoreJs',
         'ignoreRobotsTxt', 'skipLoadingFrames', 'verboseLog', 'disableWebSecurity', 'rotateUserAgents',
         'maxCrawledPages', 'maxOutputPages', 'maxCrawlDepth', 'timeout', 'resourceTimeout',
         'pageLoadTimeout', 'pageFunctionTimeout', 'maxInfiniteScrollHeight',

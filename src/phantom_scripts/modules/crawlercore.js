@@ -218,6 +218,9 @@ Crawler.prototype.onConsoleMessage = function onConsoleMessage(msg) {
 
 Crawler.prototype.onResourceRequested = function (requestData, request) {
     var loadCss = typeof(this.config.loadCss)==='boolean' ? this.config.loadCss : constants.DEFAULT_LOAD_CSS;
+    var blockResourceRegex = typeof(this.config.blockResourceRegex)==='string' ? this.config.blockResourceRegex : constants.DEFAULT_BLOCK_RESOURCE_REGEX;
+	  blockResourceRegex = new RegExp(blockResourceRegex, "gi");
+
     if( !loadCss || this.config.avoidPrivateNetwork ) {
         var parsedUrl = clientUtils.parseUrl(requestData['url']);
         var abort = false;
@@ -245,6 +248,11 @@ Crawler.prototype.onResourceRequested = function (requestData, request) {
             utils.log("Resources from private addresses will not be loaded: " + requestData.url + " (resource id: " + requestData.id + ")");
             abort = true;
         }
+
+				if( blockResourceRegex.test(parsedUrl['host']) {
+						utils.log("Aborting loading some Resource due to your Regex: " + requestData.url + " (resource id: " + requestData.id + ")", "debug");
+						abort = true;
+				}
 
         if( abort ) {
             request.abort();
@@ -1194,6 +1202,3 @@ Crawler.prototype.start = function start(mode, singleUrl) {
 			throw new CrawlerError("Parameter 'mode' has an unknown value ('"+mode+"').");
 	}
 };
-
-
-

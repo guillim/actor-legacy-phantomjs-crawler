@@ -85,6 +85,12 @@
             "description": "Indicates whether the crawler should load CSS stylesheet files. Disable this feature after you have fine-tuned your crawler in order to increase crawling performance and reduce your bandwidth costs.",
             "default": true
         },
+        "blockResourceRegex": {
+            "title": "Block files matching this regex",
+            "type": "string",
+            "nullable": true,
+            "description": "Indicates the regex that could match any resource the crawler should not load. => increase crawling performance and reduce your bandwidth costs."
+        },
         "injectJQuery": {
             "title": "Inject jQuery",
             "type": "boolean",
