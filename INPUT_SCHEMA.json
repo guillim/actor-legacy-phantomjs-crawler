@@ -89,9 +89,13 @@
             "title": "Block files matching this regex",
             "type": "string",
             "nullable": true,
+<<<<<<< HEAD
             "description": "Indicates the regex that could match any resource the crawler should not load. => increase crawling performance and reduce your bandwidth costs.",
             "prefill": "nameofaresourceyoudontwant",
             "editor": "javascript"
+=======
+            "description": "Indicates the regex that could match any resource the crawler should not load. => increase crawling performance and reduce your bandwidth costs."
+>>>>>>> 2b6210d845f5ea6f84c69c3ef9f64362a313c0f4
         },
         "injectJQuery": {
             "title": "Inject jQuery",
