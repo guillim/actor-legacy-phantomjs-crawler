@@ -252,8 +252,6 @@ Crawler.prototype.onResourceRequested = function (requestData, request) {
 				if( blockResourceRegex.test(parsedUrl['host'])) {
 						utils.log("Aborting loading some Resource due to your Regex: " + requestData.url + " (resource id: " + requestData.id + ")", "debug");
 						abort = true;
-				}else{
-						utils.log("DEBUG MANUEL GUILLIM requestData.url: " + requestData.url + " (parsedUrl [host])" + parsedUrl['host'] + "this.config.blockResourceRegex" + this.config.blockResourceRegex , "debug");
 				}
 
         if( abort ) {
