@@ -87,6 +87,12 @@ exports.DEFAULT_LOAD_IMAGES = false;
 exports.DEFAULT_LOAD_CSS = false;
 
 /**
+ * Default value of the 'blockResourceRegex' configuration setting.
+ */
+exports.DEFAULT_BLOCK_RESOURCE_REGEX = 'regexthatwillmathcnothing';
+
+
+/**
  * The default user agent string used by both crawler and actor.
  * Currently we pretend to be Chrome for Windows.
  */
